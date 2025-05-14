@@ -1,2 +1,30 @@
 # Weather Forecast Page
-## This web application is based on javascript to drive all the interactiveness within the HTML elements. It provides a page to accept user location and in response displays a 3-day weather forecast for that location
+
+## Overview
+
+### Description
+- This web application is based on javascript to drive all the interactiveness within the HTML elements. It provides a page to accept user location and in response displays a 3-day weather forecast for that location generated from the database of the OpenWeatherMap.org website.
+
+### Purpose
+- This web application provides a simple approach for a user to type in his location to generate the current weather forecast associated with the location.
+
+### Video Demonstration
+- [Demo Video goes here!](http://youtube.link.goes.here)
+
+## Development Environment
+
+### Tools Used
+- VS Code
+- Git
+- GitHub
+
+### Programming Language Used
+- Javascript
+- HTML
+- CSS
+
+## Useful Websites
+* [OpenWeatherMap](https://openweathermap.org)
+* [GeeksForGeeks](http://www.geeksforgeeks.org/build-a-weather-app-in-html-css-javascript/)
+* [Web Site Name](https://url.link.goes.here)
+* [Web Site Name](https://url.link.goes.here)
