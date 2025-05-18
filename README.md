@@ -26,5 +26,5 @@
 ## Useful Websites
 * [OpenWeatherMap](https://openweathermap.org)
 * [GeeksForGeeks](http://www.geeksforgeeks.org/build-a-weather-app-in-html-css-javascript/)
-* [Web Site Name](https://url.link.goes.here)
-* [Web Site Name](https://url.link.goes.here)
+* [CSS Tricks]([https://url.link.goes.here](https://css-tricks.com/snippets/css/complete-guide-grid/#prop-display))
+* [w3school](https://www.w3schools.com/html/html_css.asp)
