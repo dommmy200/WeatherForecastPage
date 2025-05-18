@@ -1,3 +1,4 @@
+// JavaScript code to fetch and display weather data from OpenWeatherMap API
 const locationInput = document.getElementById("location-input");
 const locationList = document.getElementById("location-list");
 const weatherForecast = document.getElementById("weather-forecast");
@@ -20,7 +21,6 @@ locationInput.addEventListener('input', async (event) => {
         const data = await response.json();
         // const data = fetchWeatherData(inputValue);
         //Log the data to the console
-        console.log('Location data:', data); // For demonstration in the console
         //Check if the data is empty
         if (!data) {
             //Log the error to the console
