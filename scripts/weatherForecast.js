@@ -28,7 +28,6 @@ locationInput.addEventListener('input', async (event) => {
             locationList.innerHTML = '';
             return;
         }
-
         //Filter the locations based on the input value
         let filteredLocations = [];
         // Check if data and data.list are defined before filtering
@@ -59,16 +58,24 @@ function displayLocations(locations) {
         const myCity = `${city}, ${country}`;
         //Create a list item for each location
         const listItem = document.createElement('li');
+        listItem.className = 'location-item';
         listItem.textContent = `${myCity}`;
+        listItem.style.listStyleType = 'none'; // Remove default list style
+        listItem.style.padding = '5px'; // Add padding to the list item
         
         //Add event listener to each list item to change the cursor and background color on hover
         listItem.addEventListener('mouseover', function() {
             this.style.cursor = 'pointer'; // 'this' refers to listItem
-            this.style.backgroundColor = '#f0f0f0'; // Change background color on hover
+            this.style.backgroundColor = '#000'; // Change background color on hover
+            this.style.transition = 'background-color 0.3s'; // Add transition for smooth effect
+            this.style.color = '#f0f0f0'; // Change text color on hover
         });
         listItem.addEventListener('mouseout', function() {
             this.style.cursor = ''; // Or 'default' to revert to the original cursor
-            this.style.backgroundColor = ''; // Revert background color on mouse out 
+            this.style.backgroundColor = ''; // Revert background color on mouse out
+            this.style.color = ''; // Revert text color on mouse out
+        // Add transition for smooth effect
+            this.style.transition = 'background-color 0.3s'; // Add transition for smooth effect
         });
         
         //Add event listener to each list item to update the input field and hide the dropdown list
@@ -81,15 +88,7 @@ function displayLocations(locations) {
         locationList.appendChild(listItem);
     });
 }
-
-//Add event listener to the location input field to hide the dropdown list when clicked outside
-// locationInput.addEventListener('blur', () => {
-//     setTimeout(() => {
-//         locationList.style.display = 'none';
-//     }
-//     , 200);
-// });
-
+//Function to fetch weather data from OpenWeatherMap API
 async function fetchWeatherData(lat, lon) {
     try {
         const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
@@ -127,7 +126,7 @@ async function getCityWeather(lat, lon) {
     // and display it in the weather display section
     const cityName = citiesWxData.city.name;
     const forecastArray = citiesWxData.list;
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 7; i++){
         const name = cityName;
         const date = forecastArray[i].dt_txt;
         const temperature = forecastArray[i].main.temp;
@@ -144,11 +143,11 @@ async function getCityWeather(lat, lon) {
         
         // Create elements to display the weather data
         // Create a div to hold the weather data
-        const cityElement = document.createElement('h4');
+        const cityElement = document.createElement('h2');
         cityElement.textContent = name;
         weatherDisplay.appendChild(cityElement);
 
-        const forecastDateTime = document.createElement('h5');
+        const forecastDateTime = document.createElement('h3');
         forecastDateTime.textContent = `Forecast for ${date}`;
 
         const forecastTemp = document.createElement('p');
@@ -172,7 +171,19 @@ async function getCityWeather(lat, lon) {
         forecastVisibility.textContent = `Visibility: ${visibility} m`;
         forecastWindDirection.textContent = `Wind Direction: ${windDirection(winDirection)}`;
 
+        // Create a div to hold the weather icon and description
         const forecastWxCorner = document.createElement('div');
+        forecastWxCorner.style.border = '1px solid #ccc';
+        forecastWxCorner.style.padding = '10px';
+        forecastWxCorner.style.margin = '0 auto';
+        forecastWxCorner.style.display = 'flex';
+        forecastWxCorner.style.flexDirection = 'column';
+        forecastWxCorner.style.justifyContent = 'center';
+        forecastWxCorner.style.textAlign = 'center';
+        forecastWxCorner.style.alignItems = 'center';
+        forecastWxCorner.style.backgroundColor = '#f0f0f0';
+        forecastWxCorner.style.borderRadius = '5px';
+        forecastWxCorner.style.width = '25%';
 
         const forecastWxImg = document.createElement('img');
         const iconUrl = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
@@ -199,7 +210,7 @@ async function getCityWeather(lat, lon) {
 function windDirection(deg) {
     // Initialize direction variable
     let direction = "";
-
+    // Determine the wind direction based on the degree value
     if (deg > 338 && deg <= 360 || deg >= 0 && deg <= 23) {
         direction = "North";
     } else if (deg > 23 && deg <= 68) {
