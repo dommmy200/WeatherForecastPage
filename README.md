@@ -9,7 +9,7 @@
 - This web application provides a simple approach for a user to type in his location to generate the current weather forecast associated with the location.
 
 ### Video Demonstration
-- [Demo Video goes here!](http://youtube.link.goes.here)
+- [Dialy Weather Forecast](https://youtu.be/vmeDdfFWpCI)
 
 ## Development Environment
 
