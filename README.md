@@ -3,7 +3,7 @@
 ## Overview
 
 ### Description
-- This web application is based on javascript to drive all the interactiveness within the HTML elements. It provides a page to accept user location and in response displays a 3-day weather forecast for that location generated from the database of the OpenWeatherMap.org website.
+- This web application is based on javascript to drive all the interactiveness within the HTML elements. It provides a page to accept user location and in response displays a five 3-hour intervals weather forecast for the provided location generated from the database of the OpenWeatherMap.org website.
 
 ### Purpose
 - This web application provides a simple approach for a user to type in his location to generate the current weather forecast associated with the location.
